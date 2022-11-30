@@ -3,3 +3,4 @@ var tula = new clock()
 tula.on('tictac', ()=>{
     tula.theTime()
 })
+
