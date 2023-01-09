@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
   res.render("index", {titulo:"mi titulo dinámico"})
 })
 app.get('/contacto', (req, res) => {
-  res.send('Estas en contactos!')
+    res.render("contacto", {tituloContacto:"Estamos en contacto de manera dinámica"})
 })
 
 //Listen port
@@ -24,5 +24,8 @@ app.listen(port, () => {
 
 //Error controller
 app.use((req, res) => {
-    res.status(404).sendFile(__dirname+'/public/404.html')
+    res.status(404).render("404",{
+        titulo: "Error 404",
+        descripcion: "Page not found"
+    })
 })
