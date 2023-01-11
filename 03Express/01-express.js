@@ -8,14 +8,7 @@ app.use(express.static(__dirname+'/public'))
 //Motor de plantilla
 app.set('view engine', 'ejs')
 app.set('views', __dirname+'/views')
-
-//Gets
-app.get('/', (req, res) => {
-  res.render("index", {titulo:"mi titulo dinámico"})
-})
-app.get('/contacto', (req, res) => {
-    res.render("contacto", {tituloContacto:"Estamos en contacto de manera dinámica"})
-})
+app.use('/',require('./router/rutas'))
 
 //Listen port
 app.listen(port, () => {
