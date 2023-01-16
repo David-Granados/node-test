@@ -30,7 +30,8 @@ app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
 app.use('/', require('./router/rutas'))
 app.use('/pokemon', require('./router/pokemon'))
-
+//Entrenador
+app.use('/entrenador',require('./router/entrenador'))
 //Listen port
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
