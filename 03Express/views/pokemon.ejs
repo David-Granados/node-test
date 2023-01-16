@@ -1,6 +1,8 @@
 <%- include("template/cabecera.ejs", {tituloWeb:'Panel de Administración'}) %>
 
-  <div class="container">
+    <div class="container">
+        <h1>CRUD Mongo</h1>
+        <a class="btn btn-success btn-block my-4" href="/pokemon/crear">Crear un nuevo pokemon</a>
         <table class="table">
             <thead class="thead-dark">
                 <tr>
@@ -12,21 +14,32 @@
                 </tr>
             </thead>
             <tbody>
-      <% if (arrayPokemon.length> 0) { %>
-          <!--Haremos el foreach para recorrer el array-->
-          <% arrayPokemon.forEach(pokemon => { %>
-              <tr>
-                  <th scope="row"><%= pokemon.id %></th>
-                  <td><%= pokemon.nombre %></td>
-                  <td><%= pokemon.tipo %></td>
-                  <td><%= pokemon.descripcion %></td>
-                  <td>Aciones</td>
-              </tr>
-          <% }) %>
-      <% } %>
-</tbody>
+                <% if (arrayPokemon.length> 0) { %>
+                    <!--Haremos el foreach para recorrer el array-->
+                    <% arrayPokemon.forEach(pokemon=> { %>
+                        <tr>
+                            <th scope="row">
+                                <%= pokemon.id %>
+                            </th>
+                            <td>
+                                <%= pokemon.nombre %>
+                            </td>
+                            <td>
+                                <%= pokemon.tipo %>
+                            </td>
+                            <td>
+                                <%= pokemon.descripcion %>
+                            </td>
+
+                            <td>
+                                <a class="btn btn-warning btn-sm" href="pokemon/<%= pokemon.id %>">Editar/Eliminar</a>
+                            </td>
+                        </tr>
+                        <% }) %>
+                            <% } %>
+            </tbody>
         </table>
     </div>
 
 
-<%- include("template/footer.ejs") %>
+    <%- include("template/footer.ejs") %>
