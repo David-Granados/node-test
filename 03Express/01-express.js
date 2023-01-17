@@ -19,9 +19,6 @@ mongoose.connect(uri,
   .then(() => console.log('Base de datos conectada'))
   .catch(e => console.log(e))
 
-
-
-
 //middleware
 app.use(express.static(__dirname + '/public'))
 
@@ -32,6 +29,8 @@ app.use('/', require('./router/rutas'))
 app.use('/pokemon', require('./router/pokemon'))
 //Entrenador
 app.use('/entrenador',require('./router/entrenador'))
+//Objetos
+app.use('/objetos', require('./router/objetos'))
 //Listen port
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

@@ -1,5 +1,12 @@
 <%- include("template/cabecera.ejs",{tituloWeb:'Index'}) %>
-    <h1>
+<div class="container">
+    
+<h1>
         <%= titulo %>
     </h1>
+    <a class="btn btn-success btn-block my-4" href="/pokemon">Pokemons</a>
+    <a class="btn btn-success btn-block my-4" href="/entrenador">Entrenadores</a>
+    <a class="btn btn-success btn-block my-4" href="/objetos">Objetos</a>
+    
+</div>
     <%- include("template/footer.ejs") %>
