@@ -11,10 +11,12 @@
                         <form id="editar" data-id="<%= entrenador.id %>">
                             <input type="text" value="<%= entrenador.nombre %>" class="form-control my-2" name="nombre"
                                 id="nombreInput">
-                            <input type="text" value="<%= entrenador.ruta%>" class="form-control my-2"
-                                name="ruta" id="rutaInput">
-                            <input type="text" value="<%= entrenador.descripcion %>" class="form-control my-2"
-                                name="descripcion" id="descripcionInput">
+                            <input type="text" value="<%= entrenador.bio%>" class="form-control my-2"
+                                name="bio" id="bioInput">
+                            <input type="text" value="<%= entrenador.ciudad %>" class="form-control my-2"
+                                name="ciudad" id="ciudadInput">
+                            <input type="text" value="<%= entrenador.lista_pokemons %>" class="form-control my-2"
+                                name="lista_pokemons" id="lista_pokemonsInput">
                             <button class="btn btn-warning btn-sm" type="submit">
                                 Editar
                             </button>
