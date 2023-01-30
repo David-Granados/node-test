@@ -5,9 +5,7 @@ const entrenadorSchema = new Schema({
     nombre: String,
     bio: String,
     ciudad:String,
-    lista_pokemons: {
-        nombre: String
-    }
+    lista_pokemons: String
 })
 
 //Creamos el modelo
