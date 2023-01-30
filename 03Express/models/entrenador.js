@@ -4,7 +4,11 @@ const Schema = mongoose.Schema;
 const entrenadorSchema = new Schema({
     nombre: String,
     ruta: String,
+    lista_pokemons: {
+        id: []
+    },
     descripcion: String
+
 })
 
 //Creamos el modelo

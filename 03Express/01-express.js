@@ -30,7 +30,7 @@ app.use('/pokemon', require('./router/pokemon'))
 // //Entrenador
 app.use('/entrenador',require('./router/entrenador'))
 // //Objetos
-// app.use('/objetos', require('./router/objetos'))
+app.use('/objeto', require('./router/objeto'))
 //Listen port
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
