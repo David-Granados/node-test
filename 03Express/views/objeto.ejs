@@ -2,40 +2,37 @@
 
     <div class="container">
         <h1>CRUD Mongo</h1>
-        <a class="btn btn-success btn-block my-4" href="/">Crear un nuevo Objeto</a>
+        <a class="btn btn-success btn-block my-4" href="/objeto/crearObjeto">Crear un nuevo Objeto</a>
         <a class="btn btn-success btn-block my-4" href="/">Volver al inicio</a>
         <table class="table">
             <thead class="thead-dark">
                 <tr>
+                    <th scope="col">id</th>
                     <th scope="col">Nombre</th>
-                    <th scope="col">Tipo</th>
                     <th scope="col">Descripción</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- <% if (arrayPokemon.length> 0) { %>
+                <% if (arrayObjeto.length> 0) { %>
                     <!--Haremos el foreach para recorrer el array-->
-                    <% arrayPokemon.forEach(pokemon=> { %>
+                    <% arrayObjeto.forEach(objeto=> { %>
                         <tr>
                             <th scope="row">
-                                <%= pokemon.id %>
+                                <%= objeto.id %>
                             </th>
                             <td>
-                                <%= pokemon.nombre %>
+                                <%= objeto.nombre %>
                             </td>
                             <td>
-                                <%= pokemon.tipo %>
-                            </td>
-                            <td>
-                                <%= pokemon.descripcion %>
+                                <%= objeto.descripcion %>
                             </td>
 
                             <td>
-                                <a class="btn btn-warning btn-sm" href="/pokemon/<%= pokemon.id %>">Editar/Eliminar</a>
+                                <a class="btn btn-warning btn-sm" href="/objeto/<%= objeto.id %>">Editar/Eliminar</a>
                             </td>
                         </tr>
                         <% }) %>
-                            <% } %> -->
+                            <% } %> 
             </tbody>
         </table>
     </div>

@@ -1,28 +1,24 @@
 <%- include("template/cabecera", {tituloWeb: 'Detalles del Entrenador' }) %>
     <div class="container">
-        <h1>Detalles del Entrenador</h1>
+        <h1>Detalles de Objeto</h1>
         <% if (error) { %>
             <%= mensaje %>
-                <a href="/entrenador" class="btn btn-dark btn-block my-2">
+                <a href="/objeto" class="btn btn-dark btn-block my-2">
                     Volver
                 </a>
                 <% } %>
                     <% if (!error) { %>
-                        <form id="editar" data-id="<%= entrenador.id %>">
-                            <input type="text" value="<%= entrenador.nombre %>" class="form-control my-2" name="nombre"
+                        <form id="editar" data-id="<%= objeto.id %>">
+                            <input type="text" value="<%= objeto.nombre %>" class="form-control my-2" name="nombre"
                                 id="nombreInput">
-                            <input type="text" value="<%= entrenador.bio%>" class="form-control my-2"
-                                name="bio" id="bioInput">
-                            <input type="text" value="<%= entrenador.ciudad %>" class="form-control my-2"
-                                name="ciudad" id="ciudadInput">
-                            <input type="text" value="<%= entrenador.lista_pokemons %>" class="form-control my-2"
-                                name="lista_pokemons" id="lista_pokemonsInput">
+                            <input type="text" value="<%= objeto.descripcion %>" class="form-control my-2"
+                                name="descripcion" id="descripcionInput">
                             <button class="btn btn-warning btn-sm" type="submit">
                                 Editar
                             </button>
                         </form>
                         <hr>
-                        <button class="btn btn-danger btn-sm" data-id="<%= entrenador.id %>">
+                        <button class="btn btn-danger btn-sm" data-id="<%= objeto.id %>">
                             Eliminar
                         </button>
                         <% } %>
@@ -35,13 +31,13 @@
             btnEliminar.addEventListener('click', async () => {
                 console.log(btnEliminar.dataset.id)
                 try {
-                    const data = await fetch(`/entrenador/${btnEliminar.dataset.id}`, {
+                    const data = await fetch(`/objeto/${btnEliminar.dataset.id}`, {
                         method: 'delete'
                     })
                     const res = await data.json()
                     console.log(res)
                     if (res.estado) {
-                        window.location.href = '/entrenador'
+                        window.location.href = '/objeto'
                     } else {
                         console.log(res)
                     }
@@ -54,20 +50,18 @@
             formEditar.addEventListener('submit', async (e) => {
                 e.preventDefault()
                 const nombre = formEditar.elements['nombre'].value
-                const bio = formEditar.elements['bio'].value
-                const ciudad = formEditar.elements['ciudad'].value
-                const lista_pokemons = formEditar.elements['lista_pokemons'].value
+                const descripcion = formEditar.elements['descripcion'].value
                 const id = formEditar.dataset.id
-                const data = await fetch(`/entrenador/${id}`, {
+                const data = await fetch(`/objeto/${id}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ nombre, bio, ciudad, lista_pokemons })
+                    body: JSON.stringify({ nombre, descripcion })
                 })
                 const res = await data.json()
                 if (res.estado) {
-                    window.location.href = '/entrenador'
+                    window.location.href = '/objeto'
                 } else {
                     console.log(res)
                 }
