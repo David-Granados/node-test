@@ -9,3 +9,4 @@ setInterval(()=>{
    console.log('Hola Node.js')
 }, 1000)
 //Ctrl + C detengo la ejecución de un script en la consola
+// Hola
